@@ -1,0 +1,52 @@
+name: courtsides
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+#--------------- PACKAGES ------------------#
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Utility Packages
+  http: ^1.2.2
+  intl: ^0.19.0
+  logger: ^2.4.0
+  url_launcher: ^6.3.0
+
+  # Icons
+  cupertino_icons: ^1.0.6
+  iconsax: ^0.0.8
+
+  # State Management
+  get: ^4.6.6
+  get_storage: ^2.1.1
+  firebase_storage: ^12.1.1
+  connectivity_plus: ^6.0.3
+
+  # Product Specific
+
+
+  #--------------- ./ PACKAGES END ------------------#
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  #--------------- LOCAL ASSETS ------------------#
+  assets:
+    - assets/fonts/
+    - assets/icons/
+    - assets/images/
+    - assets/logos/
+
+  #--------------- LOCAL FONTS ------------------#
+
