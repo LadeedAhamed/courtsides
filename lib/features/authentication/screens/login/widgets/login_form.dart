@@ -1,3 +1,4 @@
+import 'package:courtsides/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:courtsides/features/authentication/screens/signup/signup.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:courtsides/utils/constants/text_strings.dart';
@@ -55,7 +56,7 @@ class TLoginForm extends StatelessWidget {
 
                 // Forget Password
                 TextButton(
-                    onPressed: () {}, child: const Text(TTexts.forgetPassword))
+                    onPressed: () => Get.to(()=> const ForgetPassword()), child: const Text(TTexts.forgetPassword))
               ],
             ),
             const SizedBox(
