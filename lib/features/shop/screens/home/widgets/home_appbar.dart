@@ -1,5 +1,5 @@
 import 'package:courtsides/common/widgets/appbar/appbar.dart';
-import 'package:courtsides/common/widgets/products_cart/cart_menu_icon.dart';
+import 'package:courtsides/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
