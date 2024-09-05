@@ -1,9 +1,11 @@
-import 'package:courtsides/features/shop/screens/home/home.dart';
-import 'package:courtsides/utils/constants/colors.dart';
-import 'package:courtsides/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import 'package:courtsides/features/shop/screens/home/home.dart';
+import 'package:courtsides/features/shop/screens/store/store.dart';
+import 'package:courtsides/utils/constants/colors.dart';
+import 'package:courtsides/utils/helpers/helper_function.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -42,7 +44,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
     const HomeScreen(),
-    Container(color: Colors.red),
+    const StoreScreen(),
     Container(color: Colors.brown),
     Container(color: Colors.orange)
   ];

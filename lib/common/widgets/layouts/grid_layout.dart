@@ -1,4 +1,3 @@
-import 'package:courtsides/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -21,11 +20,11 @@ class TGridLayout extends StatelessWidget {
       itemCount: itemCount,
       shrinkWrap: true,
       padding: EdgeInsets.zero,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: TSizes.gridViewSpacing,
         crossAxisSpacing: TSizes.gridViewSpacing,
-        mainAxisExtent: 288,
+        mainAxisExtent: mainAxisExtent,
       ),
       itemBuilder: itemBuilder,
     );
