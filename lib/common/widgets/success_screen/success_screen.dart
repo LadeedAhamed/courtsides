@@ -1,11 +1,8 @@
 import 'package:courtsides/common/styles/spacing_styles.dart';
-import 'package:courtsides/features/authentication/screens/login/login.dart';
-import 'package:courtsides/utils/constants/image_strings.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:courtsides/utils/constants/text_strings.dart';
 import 'package:courtsides/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({

@@ -1,6 +1,5 @@
 import 'package:courtsides/common/widgets/appbar/appbar.dart';
 import 'package:courtsides/common/widgets/appbar/tabbar.dart';
-import 'package:courtsides/common/widgets/brands/brand_showcase.dart';
 import 'package:courtsides/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:courtsides/common/widgets/layouts/grid_layout.dart';
 import 'package:courtsides/common/widgets/products/cart/cart_menu_icon.dart';
@@ -8,7 +7,6 @@ import 'package:courtsides/common/widgets/brands/brand_card.dart';
 import 'package:courtsides/common/widgets/texts/section_heading.dart';
 import 'package:courtsides/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:courtsides/utils/constants/colors.dart';
-import 'package:courtsides/utils/constants/image_strings.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:courtsides/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';

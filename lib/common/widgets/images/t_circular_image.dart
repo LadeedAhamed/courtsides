@@ -1,4 +1,3 @@
-import 'package:courtsides/common/widgets/containers/rounded_container.dart';
 import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:courtsides/utils/helpers/helper_function.dart';

@@ -5,7 +5,6 @@ import 'package:courtsides/utils/helpers/helper_function.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
