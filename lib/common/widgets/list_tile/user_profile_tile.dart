@@ -1,7 +1,9 @@
 import 'package:courtsides/common/widgets/images/t_circular_image.dart';
+import 'package:courtsides/features/personalization/screens/profile/profile.dart';
 import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TUserProfileTile extends StatelessWidget {
@@ -31,7 +33,7 @@ class TUserProfileTile extends StatelessWidget {
             Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white),
       ),
       trailing: IconButton(
-          onPressed: () {},
+          onPressed: () => Get.to(const ProfileScreen()),
           icon: const Icon(
             Iconsax.edit,
             color: TColors.white,
