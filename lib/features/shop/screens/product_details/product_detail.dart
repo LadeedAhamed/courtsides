@@ -1,12 +1,14 @@
+import 'package:courtsides/common/widgets/texts/read_more_text.dart';
 import 'package:courtsides/common/widgets/texts/section_heading.dart';
 import 'package:courtsides/features/shop/screens/product_details/widgets/bottom_add_to_cart.dart';
 import 'package:courtsides/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:courtsides/features/shop/screens/product_details/widgets/product_image_slider.dart';
 import 'package:courtsides/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:courtsides/features/shop/screens/product_details/widgets/rating_share_widget.dart';
+import 'package:courtsides/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
-import 'package:courtsides/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -53,16 +55,9 @@ class ProductDetailScreen extends StatelessWidget {
                   const TSectionHeading(
                       title: 'Description', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
-                  const ReadMoreText(
-                    'Texts lets you send and receive messages from all major messaging platforms. Privacy First. Your messages never touch the Texts servers.',
-                    trimLines: 2,
-                    trimMode: TrimMode.Line,
-                    trimCollapsedText: 'Show more',
-                    trimExpandedText: 'Less',
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                  const TReadMoreText(
+                    data:
+                        'Texts lets you send and receive messages from all major messaging platforms. Privacy First. Your messages never touch the Texts servers.',
                   ),
 
                   // Reviews
@@ -73,10 +68,10 @@ class ProductDetailScreen extends StatelessWidget {
                     children: [
                       TSectionHeading(
                           title: 'Reviews (199)',
-                          onPressed: () {},
+                          onPressed: () => Get.to(const ProductReviewsScreen()),
                           showActionButton: false),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () => Get.to(const ProductReviewsScreen()),
                           icon: const Icon(Iconsax.arrow_right_3, size: 18))
                     ],
                   ),
