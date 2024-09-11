@@ -3,9 +3,11 @@ import 'package:courtsides/common/widgets/custom_shapes/containers/primary_heade
 import 'package:courtsides/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:courtsides/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:courtsides/common/widgets/texts/section_heading.dart';
+import 'package:courtsides/features/personalization/screens/address/address.dart';
 import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -46,7 +48,7 @@ class SettingsScreen extends StatelessWidget {
                     title: 'My Address',
                     subtitle: 'Set shopping delivery address',
                     icon: Iconsax.safe_home,
-                    onTap: () {},
+                    onTap: () => Get.to(const UserAddressScreen()),
                   ),
                   SettingsMenuTile(
                     title: 'My Cart',
