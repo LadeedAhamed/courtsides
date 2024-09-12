@@ -1,22 +1,22 @@
+import 'package:courtsides/features/shop/screens/cart/cart.dart';
 import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TCartCounterIcon extends StatelessWidget {
   const TCartCounterIcon({
     super.key,
-    required this.onPressed,
   });
 
-  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     bool dark = THelperFunctions.isDarkMode(context);
     return Stack(
       children: [
         IconButton(
-            onPressed: onPressed,
+            onPressed: () => Get.to(const CartScreen()),
             icon: Icon(
               Iconsax.shopping_bag,
               color: dark ? TColors.light : TColors.dark,
