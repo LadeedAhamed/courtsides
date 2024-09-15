@@ -4,6 +4,7 @@ import 'package:courtsides/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:courtsides/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:courtsides/common/widgets/texts/section_heading.dart';
 import 'package:courtsides/features/personalization/screens/address/address.dart';
+import 'package:courtsides/features/shop/screens/order/order.dart';
 import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
                     title: 'My Orders',
                     subtitle: 'In-progress and Completed orders',
                     icon: Iconsax.bag_tick,
-                    onTap: () {},
+                    onTap: () => Get.to(const OrderScreen()),
                   ),
                   SettingsMenuTile(
                     title: 'Bank Account',
