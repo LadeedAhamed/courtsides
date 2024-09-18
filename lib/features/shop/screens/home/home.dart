@@ -2,6 +2,7 @@ import 'package:courtsides/common/widgets/custom_shapes/containers/search_contai
 import 'package:courtsides/common/widgets/layouts/grid_layout.dart';
 import 'package:courtsides/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:courtsides/common/widgets/texts/section_heading.dart';
+import 'package:courtsides/features/shop/screens/all_products/all_products.dart';
 import 'package:courtsides/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:courtsides/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:courtsides/features/shop/screens/home/widgets/home_categories.dart';
@@ -10,6 +11,7 @@ import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/constants/image_strings.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -72,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
               child: TSectionHeading(
                 title: 'Popular Products',
-                onPressed: () {},
+                onPressed: () => Get.to(const AllProductsScreen()),
                 showActionButton: true,
               ),
             ),
