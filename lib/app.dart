@@ -1,4 +1,5 @@
 import 'package:courtsides/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: const OnBoardingScreen(),
+      home: const Scaffold(backgroundColor: TColors.primary,body: Center(child: CircularProgressIndicator(color: Colors.white),),)
     );
   }
 }

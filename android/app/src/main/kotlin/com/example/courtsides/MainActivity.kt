@@ -1,4 +1,4 @@
-package com.example.courtsides
+package com.ladeedahamed.connext
 
 import io.flutter.embedding.android.FlutterActivity
 

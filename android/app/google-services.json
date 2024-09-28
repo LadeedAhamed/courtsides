@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "262941798459",
+    "project_id": "connext-50ab2",
+    "storage_bucket": "connext-50ab2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262941798459:android:08e56bee098a8a9278ac1e",
+        "android_client_info": {
+          "package_name": "com.ladeedahamed.connext"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262941798459-f30e1t7mdhvouag69ntul2ohuo5pgktb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ladeedahamed.connext",
+            "certificate_hash": "6081771de737590056e923c9a47bd6a34e2c7f61"
+          }
+        },
+        {
+          "client_id": "262941798459-18s2bab5g8bi12rmufaalclvbf01fkh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlXF-BT6oJ8MVmYFK3iLowHn9yKe7Zrt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262941798459-18s2bab5g8bi12rmufaalclvbf01fkh0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "262941798459-b9o4e4uqnjis18f9iv29euvovh0qtcls.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ladeedahamed.connext"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
