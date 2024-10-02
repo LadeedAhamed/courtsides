@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:courtsides/features/personalization/models/user_model.dart';
-import 'package:courtsides/utils/helpers/firebase_exceptions.dart';
+import 'package:courtsides/utils/exceptions/firebase_exceptions.dart';
+import 'package:courtsides/utils/exceptions/format_exceptions.dart';
+import 'package:courtsides/utils/exceptions/platform_exceptions.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 

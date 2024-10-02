@@ -27,25 +27,19 @@ class SignupController extends GetxController {
 
   // SIGN UP
   Future<void> signUp() async {
-    print('signup initiated:===>');
     try {
-      print('signup initiated:===>1');
-
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
           'We are processing your information...', TImages.dockerAnimation);
-      print('signup initiated:===>2');
 
       // Check Internet COnnectivity
       final isConnected = await NetworkManager.instance.isConnected();
-      print('signup initiated:===>3');
 
       if (!isConnected) {
         // Remove Loader
         TFullScreenLoader.stopLoading();
         return;
       }
-      print('signup initiated:===>4');
 
       // Form Validation
       if (!signUpFormKey.currentState!.validate()) {
@@ -60,8 +54,6 @@ class SignupController extends GetxController {
             title: 'Accept Privacy Policy',
             message:
                 'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.');
-        // Remove Loader
-        TFullScreenLoader.stopLoading();
         return;
       }
 
@@ -82,7 +74,6 @@ class SignupController extends GetxController {
       );
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
-      print('signup initiated:===>6 $newUser');
 
       // Remove Loader
       TFullScreenLoader.stopLoading();
@@ -93,7 +84,7 @@ class SignupController extends GetxController {
           message: 'Your account has been created! Verify email to continue.');
 
       // Move to verify email address
-      Get.to(const VerifyEmailScreen());
+      Get.to(VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       // Remove Loader
       TFullScreenLoader.stopLoading();
