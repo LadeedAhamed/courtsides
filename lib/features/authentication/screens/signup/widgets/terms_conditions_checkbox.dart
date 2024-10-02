@@ -1,8 +1,10 @@
+import 'package:courtsides/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:courtsides/utils/constants/colors.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:courtsides/utils/constants/text_strings.dart';
 import 'package:courtsides/utils/helpers/helper_function.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TTermsAndConditionsCheck extends StatelessWidget {
   const TTermsAndConditionsCheck({
@@ -12,15 +14,19 @@ class TTermsAndConditionsCheck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final controller = SignupController.instance;
 
     return Row(
       children: [
         SizedBox(
           width: TSizes.defaultSpace,
           height: TSizes.defaultSpace,
-          child: Checkbox(
-            value: true,
-            onChanged: (value) {},
+          child: Obx(
+            () => Checkbox(
+              value: controller.privacyPolicy.value,
+              onChanged: (value) => controller.privacyPolicy.value =
+                  !controller.privacyPolicy.value,
+            ),
           ),
         ),
         Text.rich(TextSpan(children: [

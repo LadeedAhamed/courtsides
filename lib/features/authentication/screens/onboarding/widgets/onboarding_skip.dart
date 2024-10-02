@@ -1,4 +1,4 @@
-import 'package:courtsides/features/authentication/controllers/onboarding_controller.dart';
+import 'package:courtsides/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:courtsides/utils/constants/text_strings.dart';
 import 'package:courtsides/utils/device/device_utility.dart';

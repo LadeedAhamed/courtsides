@@ -1,7 +1,8 @@
-import 'package:courtsides/features/authentication/screens/signup/verify_email.dart';
+import 'package:courtsides/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:courtsides/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:courtsides/utils/constants/text_strings.dart';
+import 'package:courtsides/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -13,18 +14,24 @@ class TSignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
+
     return Form(
+      key: controller.signUpFormKey,
       child: Column(
         children: [
           Row(
             children: [
               Expanded(
                 child: TextFormField(
+                  controller: controller.firstName,
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: TTexts.firstName,
                     prefixIcon: Icon(Iconsax.user),
                   ),
+                  validator: (value) =>
+                      TValidator.validateEmptyText('First Name', value),
                 ),
               ),
               const SizedBox(
@@ -32,11 +39,14 @@ class TSignUpForm extends StatelessWidget {
               ),
               Expanded(
                 child: TextFormField(
+                  controller: controller.lastName,
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: TTexts.lastName,
                     prefixIcon: Icon(Iconsax.user),
                   ),
+                  validator: (value) =>
+                      TValidator.validateEmptyText('Last Name', value),
                 ),
               ),
             ],
@@ -48,11 +58,14 @@ class TSignUpForm extends StatelessWidget {
 
           // Username
           TextFormField(
+            controller: controller.username,
             expands: false,
             decoration: const InputDecoration(
               labelText: TTexts.username,
               prefixIcon: Icon(Iconsax.user),
             ),
+            validator: (value) =>
+                TValidator.validateEmptyText('Username', value),
           ),
 
           const SizedBox(
@@ -61,11 +74,13 @@ class TSignUpForm extends StatelessWidget {
 
           // Email
           TextFormField(
+            controller: controller.email,
             expands: false,
             decoration: const InputDecoration(
               labelText: TTexts.email,
               prefixIcon: Icon(Iconsax.direct),
             ),
+            validator: (value) => TValidator.validateEmail(value),
           ),
 
           const SizedBox(
@@ -74,11 +89,13 @@ class TSignUpForm extends StatelessWidget {
 
           // Phone number
           TextFormField(
+            controller: controller.phoneNumber,
             expands: false,
             decoration: const InputDecoration(
               labelText: TTexts.phoneNo,
               prefixIcon: Icon(Iconsax.call),
             ),
+            validator: (value) => TValidator.validatePhoneNumber(value),
           ),
 
           const SizedBox(
@@ -86,12 +103,23 @@ class TSignUpForm extends StatelessWidget {
           ),
 
           // Password
-          TextFormField(
-            expands: false,
-            decoration: const InputDecoration(
-              labelText: TTexts.password,
-              prefixIcon: Icon(Iconsax.password_check),
-              suffixIcon: Icon(Iconsax.eye_slash),
+          Obx(
+            () => TextFormField(
+              controller: controller.password,
+              expands: false,
+              obscureText: controller.hidePassword.value,
+              decoration: InputDecoration(
+                labelText: TTexts.password,
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                  icon: Icon(controller.hidePassword.value
+                      ? Iconsax.eye_slash
+                      : Iconsax.eye),
+                  onPressed: () => controller.hidePassword.value =
+                      !controller.hidePassword.value,
+                ),
+              ),
+              validator: (value) => TValidator.validatePassword(value),
             ),
           ),
 
@@ -110,7 +138,7 @@ class TSignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () => Get.to(()=> const VerifyEmailScreen()),
+              onPressed: () => controller.signUp(),
               child: const Text(TTexts.createAccount),
             ),
           ),

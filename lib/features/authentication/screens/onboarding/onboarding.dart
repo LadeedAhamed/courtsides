@@ -1,4 +1,4 @@
-import 'package:courtsides/features/authentication/controllers/onboarding_controller.dart';
+import 'package:courtsides/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:courtsides/features/authentication/screens/onboarding/widgets/onbaording_page.dart';
 import 'package:courtsides/features/authentication/screens/onboarding/widgets/onboarding_circular_button.dart';
 import 'package:courtsides/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
