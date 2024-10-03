@@ -3,6 +3,7 @@ import 'package:courtsides/common/widgets/custom_shapes/containers/primary_heade
 import 'package:courtsides/common/widgets/list_tile/settings_menu_tile.dart';
 import 'package:courtsides/common/widgets/list_tile/user_profile_tile.dart';
 import 'package:courtsides/common/widgets/texts/section_heading.dart';
+import 'package:courtsides/data/repositories/authentication/authentication_repo.dart';
 import 'package:courtsides/features/personalization/screens/address/address.dart';
 import 'package:courtsides/features/shop/screens/order/order.dart';
 import 'package:courtsides/utils/constants/colors.dart';
@@ -130,7 +131,10 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {}, child: const Text('Logout')),
+                        onPressed: () async {
+                          await AuthenticationRepository.instance.logout();
+                        },
+                        child: const Text('Logout')),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections * 2.5),
                 ],

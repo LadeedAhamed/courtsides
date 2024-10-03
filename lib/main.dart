@@ -15,15 +15,13 @@ void main() async {
   // Init Local Storage
   await GetStorage.init();
 
-  // Todo: Await Native Splash
+  // Await Native Splash
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  // Todo: Initializa Firebase
+  // Initializa Firebase & Authentication Repository
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   ).then((FirebaseApp value) => Get.put(AuthenticationRepository()));
-
-  // Todo: Initializa Authentication
 
   runApp(const MyApp());
 }
