@@ -1,12 +1,15 @@
-import 'package:courtsides/features/authentication/screens/password_configuration/reset_password.dart';
+import 'package:courtsides/features/authentication/controllers/forget_password/forget_password_controller.dart';
 import 'package:courtsides/utils/constants/sizes.dart';
 import 'package:courtsides/utils/constants/text_strings.dart';
+import 'package:courtsides/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
+  ForgetPassword({super.key});
+
+  final controller = Get.put(ForgetPasswordController());
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +41,15 @@ class ForgetPassword extends StatelessWidget {
               ),
 
               // Text Fields
-              TextFormField(
-                decoration: const InputDecoration(
-                    labelText: TTexts.email,
-                    prefixIcon: Icon(Iconsax.direct_right)),
+              Form(
+                key: controller.forgetPasswordFormKey,
+                child: TextFormField(
+                  controller: controller.email,
+                  validator: (value) => TValidator.validateEmail(value),
+                  decoration: const InputDecoration(
+                      labelText: TTexts.email,
+                      prefixIcon: Icon(Iconsax.direct_right)),
+                ),
               ),
 
               const SizedBox(
@@ -52,7 +60,7 @@ class ForgetPassword extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => Get.off(() => const ResetPassword()),
+                    onPressed: () => controller.sendPasswordResetEmail(),
                     child: const Text(
                       TTexts.submit,
                     )),
