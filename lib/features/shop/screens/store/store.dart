@@ -5,6 +5,7 @@ import 'package:courtsides/common/widgets/layouts/grid_layout.dart';
 import 'package:courtsides/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:courtsides/common/widgets/brands/brand_card.dart';
 import 'package:courtsides/common/widgets/texts/section_heading.dart';
+import 'package:courtsides/features/shop/controllers/category_controller.dart';
 import 'package:courtsides/features/shop/screens/brands/all_brands.dart';
 import 'package:courtsides/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:courtsides/utils/constants/colors.dart';
@@ -18,8 +19,9 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoryController.instance.featuredCategories;
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: TAppBar(
           title: Text(
@@ -78,22 +80,20 @@ class StoreScreen extends StatelessWidget {
                     ),
 
                     // Tabbar
-                    bottom: const TTabBar(tabs: [
-                      Tab(child: Text('Sports')),
-                      Tab(child: Text('Furniture')),
-                      Tab(child: Text('Electronics')),
-                      Tab(child: Text('Clothing')),
-                      Tab(child: Text('Cosmetics'))
-                    ]),
+                    bottom: TTabBar(
+                        tabs: categories
+                            .map((category) => Tab(
+                                  child: Text(category.name),
+                                ))
+                            .toList()),
                   ),
                 ],
-            body: const TabBarView(children: [
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-              TCategoryTab(),
-            ])),
+            body: TabBarView(
+                children: categories
+                    .map((category) =>  TCategoryTab(
+                      category: category,
+                    ))
+                    .toList())),
       ),
     );
   }
